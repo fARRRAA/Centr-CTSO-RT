@@ -683,6 +683,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: start;
+
 }
 
 .tim_subtitle {
@@ -694,11 +695,36 @@ button {
 
 .tim_wrapper {
     margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px 20px;
+    justify-content: center;
+    height: auto;
+    transition:.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+.tim_wrapper.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+.tim_wrapper-all {
+    margin-top: 0px;
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 50px 20px;
     justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 0;
+}
+.tim_wrapper-all.opened {
+    transition:.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    visibility: visible;
+    opacity: 1;
+    height: auto;
 }
 
 .tim_item {
@@ -755,7 +781,7 @@ button {
     letter-spacing: .02em;
 }
 
-.tim_btn.btn {
+.tim_btn.btn, .tim_wrapper-close{
     padding: 15px 187px;
     background-color: var(--clr-txt);
     color: var(--clr-bg);
@@ -767,7 +793,7 @@ button {
 
 }
 
-.tim_btn.btn:hover {
+.tim_btn.btn:hover ,.tim_wrapper-close:hover{
     color: var(--clr-txt);
     outline: 1px solid #0F3063;
     background-color: var(--clr-bg);
@@ -1176,7 +1202,7 @@ button {
     box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.24);
     background-color: var(--clr-bg);
     border-radius: 100px;
-    padding: 25px 20px;
+    padding: 22px 20px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(200px);
@@ -1191,20 +1217,11 @@ button {
     fill: var(--clr-txt);
 }
 .to_top-text {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     color: var(--clr-footertxt);
 }
-.tim_item.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition:.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
 
-.opened {
-    visibility: visible !important;
-    opacity: 1;
-}
 @media(max-width:1488px) {
     .container {
         max-width: 1100px;

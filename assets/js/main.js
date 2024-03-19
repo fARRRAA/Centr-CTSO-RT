@@ -71,19 +71,17 @@ const footer = document.querySelector("footer");
 
 observer.observe(footer);
 
-const events = document.querySelectorAll('.tim_item'); 
+const eventsAll = document.querySelector('.tim_wrapper-all'); 
+const events = document.querySelector('.tim_wrapper'); 
 const showEvent = document.querySelector('.tim_btn.btn');
+const closeEvent = document.querySelector('.tim_wrapper-close');
 
 showEvent.addEventListener('click', () => {
-  for (let event = events[2];event<events.length;event++) {
-    event.classList.add('opened');
-    console.log();
-  }
+  events.classList.add('hidden');
+  eventsAll.classList.add('opened');
+});
+closeEvent.addEventListener('click', () => {
+  events.classList.remove('hidden');
+  eventsAll.classList.remove('opened');
 });
 
-window.onload = () => {
-  for (let event = events[2];event<events.length;event++) {
-    event.classList.add('hidden');
-    console.log(event);
-  }
-}
